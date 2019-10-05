@@ -45,7 +45,7 @@ public class Triangulo extends Figura {
         return "Triangulo"  +
                 " Base: " + b +
                 " Altura: " + h +
-                " Àrea: " + area;
+                " Área: " + area;
     }
 
     @Override

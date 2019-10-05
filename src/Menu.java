@@ -24,9 +24,9 @@ public class Menu {
 
         switch (figuraElegida) {
             case 1:
-                System.out.println("Ingrese la base");
+                System.out.print("Ingrese la base ");
                 double b = sc.nextDouble();
-                System.out.println("Ingrese la altura");
+                System.out.print("Ingrese la altura ");
                 double h = sc.nextDouble();
                 Triangulo triangulo1 = new Triangulo(b, h);
                 figuras.add(triangulo1);
@@ -34,9 +34,9 @@ public class Menu {
                 System.out.println("La figura creada es " + '\n' + triangulo1.toString());
                 break;
             case 2:
-                System.out.println("Ingrese la base");
+                System.out.print("Ingrese la base ");
                 b = sc.nextDouble();
-                System.out.println("Ingrese la altura");
+                System.out.print("Ingrese la altura ");
                 h = sc.nextDouble();
                 Rectangulo rectangulo1 = new Rectangulo(b, h);
                 figuras.add(rectangulo1);
@@ -44,7 +44,7 @@ public class Menu {
                 System.out.println("La figura creada es " + '\n' + rectangulo1.toString());
                 break;
             case 3:
-                System.out.println("Ingrese el radio");
+                System.out.print("Ingrese el radio ");
                 b = sc.nextDouble();
                 Circulo ciculo1 = new Circulo(b);
                 figuras.add(ciculo1);
@@ -57,8 +57,6 @@ public class Menu {
         }
 
         Menu.menu2();
-
-
     }
 
     public static void menu2() {
@@ -73,7 +71,6 @@ public class Menu {
 
             Menu.mostrarFigura();
         }
-
     }
 
     public static void mostrarFigura() {
@@ -82,7 +79,5 @@ public class Menu {
             System.out.println(figuras.get(i));
 
         }
-
-
     }
 }
