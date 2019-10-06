@@ -80,4 +80,17 @@ public class Menu {
 
         }
     }
+
+    public static void compararFiguras() {
+        for (int i = 0; i < figuras.size(); i++) {
+            for (int j = i + 1; j < figuras.size(); j++) {
+                if (figuras.get(i).equals(figuras.get(j))) {
+                    System.out.println("Estas figuras son iguales: \n " +   figuras.get(i) + "\n" + figuras.get(j));
+                }
+
+            }
+
+        }
+
+    }
 }

@@ -11,6 +11,7 @@ public class App {
 
         Menu.menuPrincipal();
 
-    }
+        Menu.compararFiguras();
 
+    }
 }

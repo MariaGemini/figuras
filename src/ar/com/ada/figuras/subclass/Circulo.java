@@ -5,21 +5,24 @@ import ar.com.ada.figuras.abst.Figura;
 import java.util.Objects;
 
 public class Circulo extends Figura {
-    private double radio;
+
+    private Double radio;
 
     public Circulo(){
 
     }
 
-    public Circulo(double radio){
+    public Circulo(Double radio){
+
         this.radio = radio;
     }
 
-    public double getRadio() {
+    public Double getRadio() {
+
         return radio;
     }
 
-    public void setRadio(double radio) {
+    public void setRadio(Double radio) {
         this.radio = radio;
     }
 
@@ -38,15 +41,23 @@ public class Circulo extends Figura {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Circulo circulo = (Circulo) o;
-        return Double.compare(circulo.getRadio(), getRadio()) == 0;
+    public boolean equals(Object obj) {
+//        misma referencia
+        if (this == obj) {
+            return true;
+        }
+//        misma clase
+        if (obj == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
+//        casting obj
+        Circulo that = (Circulo) obj;
+        return super.equals(that) &&
+                this.radio.equals(that.radio);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getRadio());
+        return -40 * Objects.hash(this.radio);
     }
 }

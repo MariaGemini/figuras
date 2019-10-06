@@ -6,8 +6,8 @@ import java.util.Objects;
 
 public class Rectangulo extends Figura {
 
-    private double b;
-    private double h;
+    private Double b;
+    private Double h;
 
     public Rectangulo(){
 
@@ -49,16 +49,23 @@ public class Rectangulo extends Figura {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Rectangulo that = (Rectangulo) o;
-        return Double.compare(that.getB(), getB()) == 0 &&
-                Double.compare(that.getH(), getH()) == 0;
+    public boolean equals(Object obj) {
+//        misma referencia
+        if (this == obj) {
+            return true;
+        }
+//        misma clase
+        if (obj == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
+//        casting obj
+        Rectangulo that = (Rectangulo) obj;
+        return super.equals(that) &&
+                this.b.equals(that.b) && this.h.equals(that.h);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getB(), getH());
+        return -40 * Objects.hash(this.b, this.h);
     }
 }

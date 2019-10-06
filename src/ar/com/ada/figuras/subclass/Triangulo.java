@@ -6,14 +6,14 @@ import java.util.Objects;
 
 public class Triangulo extends Figura {
 
-    private double b;
-    private double h;
+    private Double b;
+    private Double h;
 
-    public Triangulo(){
+    public Triangulo() {
 
     }
 
-    public Triangulo(double b, double h){
+    public Triangulo(double b, double h) {
         this.b = b;
         this.h = h;
     }
@@ -35,31 +35,41 @@ public class Triangulo extends Figura {
     }
 
     @Override
-    public double calculaArea(){
+    public double calculaArea() {
         area = (b * h) / 2;
-      return area;
-      }
+        return area;
+    }
 
     @Override
     public String toString() {
-        return "Triangulo"  +
+        return "Triangulo" +
                 " Base: " + b +
                 " Altura: " + h +
                 " Área: " + area;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Triangulo triangulo = (Triangulo) o;
-        return Double.compare(triangulo.getB(), getB()) == 0 &&
-                Double.compare(triangulo.getH(), getH()) == 0;
+    public boolean equals(Object obj) {
+//        misma referencia
+        if (this == obj) {
+            return true;
+        }
+//        misma clase
+        if (obj == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
+//        casting obj
+        Triangulo that = (Triangulo) obj;
+        return super.equals(that) &&
+        this.b.equals(that.b) && this.h.equals(that.h);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getB(), getH());
-    }
+        @Override
+        public int hashCode () {
+
+            return -50 * Objects.hash(this.b, this.h);
+        }
+
+
 }
 
